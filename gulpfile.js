@@ -4,7 +4,7 @@ var gulp = require('gulp');
 var cleanCSS = require('gulp-clean-css');
 var sass = require('gulp-sass');
 
-gulp.task('css', function() {
+gulp.task('compilecss', function() {
 	return gulp.src('src/sass/style.scss')
 			.pipe(sass())
 			.pipe(cleanCSS({compatibility: 'ie8'}))
@@ -12,5 +12,5 @@ gulp.task('css', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch('sass/*.scss', ['css']);
+	gulp.watch('src/sass/*.scss', ['compilecss']);
 });

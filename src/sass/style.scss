@@ -3,27 +3,32 @@
 @import 'reset';
 
 $font-stack: Helvetica, sans-serif;
-$primary-color: black;
+
 $background-color: aliceblue;
+$link-color: #CC0000;
+$primary-color: black;
+$tab-color: #121212;
+$tab-hover-color: #CCC;
 
 body {
 	font: 100% $font-stack;
 	color: $primary-color;
 }
 
-.gulp-1 {
-	height: 120px;
-	width: 700px;
+.content-1 {
+	height: 90px;
+	width: 960px;
 	background-color: $background-color;
 	margin: 0 auto;
 	padding: 5px 10px;
 }
 
-nav {
+.nav {
 	ul {
-		margin: 0;
+		margin: 0 auto;
 		padding: 0;
 		list-style: none;
+		width: 960px;
 	}
 
 	li {
@@ -34,5 +39,11 @@ nav {
 		display: block;
 		padding: 6px 12px;
 		text-decoration: none;
+		color: $link-color;
+		background-color: $background-color;
+	}
+
+	a:hover {
+		background-color: $tab-hover-color;
 	}
 }
