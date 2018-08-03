@@ -10,3 +10,7 @@ gulp.task('css', function() {
 			.pipe(cleanCSS({compatibility: 'ie8'}))
 			.pipe(gulp.dest('public/css'));
 });
+
+gulp.task('watch', function() {
+	gulp.watch('sass/*.scss', ['css']);
+});

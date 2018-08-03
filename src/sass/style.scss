@@ -1,3 +1,7 @@
+// style.scss
+
+@import 'reset';
+
 $font-stack: Helvetica, sans-serif;
 $primary-color: black;
 $background-color: aliceblue;
@@ -5,8 +9,6 @@ $background-color: aliceblue;
 body {
 	font: 100% $font-stack;
 	color: $primary-color;
-	margin: 0 auto;
-	padding: 0px;
 }
 
 .gulp-1 {
@@ -15,4 +17,22 @@ body {
 	background-color: $background-color;
 	margin: 0 auto;
 	padding: 5px 10px;
+}
+
+nav {
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		display: inline-block;
+	}
+
+	a {
+		display: block;
+		padding: 6px 12px;
+		text-decoration: none;
+	}
 }
