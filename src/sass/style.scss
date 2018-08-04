@@ -12,6 +12,7 @@ $background-color: aliceblue;
 $full-width: 960px;
 $link-color: #cc0000;
 $primary-color: black;
+$secondary-color: grey;
 
 @mixin transform($property) {
 	-webkit-transform: $property;
@@ -24,7 +25,26 @@ body {
 	color: $primary-color;
 }
 
-#wrapper {
+// Example of simple math capabilities with SASS. Width will be calculated as a percentage in the CSS.
+article[role="main"] {
+	display: inline-block;
+	margin: 0;
+	padding: 6px 12px;
+	float: left;
+	width: 600px / 960px * 100%;
+	border: 1px solid $primary-color;
+}
+
+aside[role="complementary"] {
+	display: inline-block;
+	margin: 0;
+	padding: 6px 12px;
+	float: right;
+	width: 300px / 960px * 100%;
+	border: 1px dashed $secondary-color;
+}
+
+.container {
 	margin: 0 auto;
 	padding: 0;
 	width: $full-width;
@@ -72,6 +92,8 @@ body {
 
 	background: $gradient-box;
 	display: block;
+	margin: 0 auto;
+	padding: 0;
 	height: 64px;
 	width: 64px;
 	border: 1px solid $link-color;
