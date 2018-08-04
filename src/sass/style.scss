@@ -4,20 +4,33 @@
 
 $font-stack: Helvetica, sans-serif;
 
+$gradient-box: linear-gradient(#efefef, #cc0000);
 $gradient-masthead: linear-gradient(white, aliceblue);
 $gradient-nav: linear-gradient(aliceblue, white);
 $gradient-nav-hover: linear-gradient(aliceblue, #efefef);
 $background-color: aliceblue;
 $full-width: 960px;
-$link-color: #CC0000;
+$link-color: #cc0000;
 $primary-color: black;
+
+@mixin transform($property) {
+	-webkit-transform: $property;
+	-ms-transform: $property;
+	transform: $property;
+}
 
 body {
 	font: 100% $font-stack;
 	color: $primary-color;
 }
 
-.content-1 {
+#wrapper {
+	margin: 0 auto;
+	padding: 0;
+	width: $full-width;
+}
+
+.masthead {
 	background: $gradient-masthead;
 	margin: 0 auto;
 	padding: 5px 10px;
@@ -26,8 +39,10 @@ body {
 }
 
 .nav {
+	height: 60px;
+
 	ul {
-		margin: 0 auto;
+		margin: 0;
 		padding: 0;
 		width: $full-width;
 		list-style: none;
@@ -50,4 +65,14 @@ body {
 			border-bottom: 2px solid $link-color;
 		}
 	}
+}
+
+.box {
+	@include transform(rotate(45deg));
+
+	background: $gradient-box;
+	display: block;
+	height: 64px;
+	width: 64px;
+	border: 1px solid $link-color;
 }
