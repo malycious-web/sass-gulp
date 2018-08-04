@@ -76,3 +76,35 @@ body {
 	width: 64px;
 	border: 1px solid $link-color;
 }
+
+// This example will not print out to the CSS file b/c it will never be 'extended'
+%equal-height {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+// This example will print to the CSS file as it will be 'extended' repeatedly
+%message-shared {
+	border: 1px solid #ccc;
+	padding: 10px;
+	color: #333;
+}
+
+.message {
+	@extend %message-shared;
+}
+
+.success {
+	@extend %message-shared;
+	border-color: green;
+}
+
+.error {
+	@extend %message-shared;
+	border-color: red;
+}
+
+.warning {
+	@extend %message-shared;
+	border-color: yellow;
+}
